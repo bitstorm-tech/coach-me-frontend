@@ -1,18 +1,31 @@
 <script lang="ts">
   import type NavbarItemType from './NavbarItem.type';
   import NavbarItem from './NavbarItem.svelte';
-  import CloseSymbol from '../ui/CloseSymbol.svelte';
+  import CloseCross from '../ui/CloseCross.svelte';
   import HamburgerSymbol from '../ui/HamburgerSymbol.svelte';
   import { slide } from 'svelte/transition';
+  import AuthButtons from './AuthButtons.svelte';
+  import SignInModal from '../auth/SignInModal.svelte';
 
   export let navbarItems: NavbarItemType[] = [];
-  let showMobileMenu = false;
+  let isMobileMenuVisible = false;
+  let isSignInModalVisible = false;
+  let signedIn = false;
 
   function toggleMobileMenu() {
-    showMobileMenu = !showMobileMenu;
+    isMobileMenuVisible = !isMobileMenuVisible;
   }
+
   function closeMobileMenu() {
-    showMobileMenu = false;
+    isMobileMenuVisible = false;
+  }
+
+  function showSignInModal() {
+    isSignInModalVisible = true;
+  }
+
+  function closeSignInModal() {
+    isSignInModalVisible = false;
   }
 </script>
 
@@ -23,8 +36,8 @@
       <NavbarItem href="/">c04ch.ME</NavbarItem>
     </div>
     <div class="sm:hidden" on:click={toggleMobileMenu}>
-      {#if showMobileMenu}
-        <CloseSymbol />
+      {#if isMobileMenuVisible}
+        <CloseCross />
       {:else}
         <HamburgerSymbol />
       {/if}
@@ -41,10 +54,10 @@
         </div>
       {/if}
     {/each}
-    <!-- {renderAuthButtons()} -->
+    <AuthButtons {signedIn} on:signinorsignup={showSignInModal} />
   </div>
   <!-- Mobile Menu -->
-  {#if showMobileMenu}
+  {#if isMobileMenuVisible}
     <div class="flex flex-col items-center w-full mt-4 sm:hidden" transition:slide>
       {#each navbarItems as navbarItem}
         {#if navbarItem.visible}
@@ -56,9 +69,11 @@
         {/if}
       {/each}
       <div class="mt-10">
-        <!-- {renderAuthButtons()} -->
+        <AuthButtons {signedIn} on:signinorsignup={showSignInModal} />
       </div>
     </div>
   {/if}
 </nav>
-<!-- {renderLoginModal()} -->
+{#if isSignInModalVisible}
+  <SignInModal on:close={closeSignInModal} />
+{/if}
