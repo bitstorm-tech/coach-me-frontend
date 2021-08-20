@@ -1,1 +1,1 @@
-<h1>Roadmap Page</h1>
+<h1 class="text-accent">Roadmap Page</h1>

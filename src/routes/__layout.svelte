@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '../app.postcss';
+  import '../tailwind.css';
   import Navbar from '../components/nav/Navbar.svelte';
   import type NavbarItemType from '../components/nav/NavbarItem.type';
 
@@ -11,4 +11,6 @@
 </script>
 
 <Navbar {navbarItems} />
-<slot />
+<div class="bg-darkest">
+  <slot />
+</div>

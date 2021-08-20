@@ -1,1 +1,1 @@
-<h1>Sessions Page</h1>
+<h1 class="text-accent">Sessions Page</h1>
