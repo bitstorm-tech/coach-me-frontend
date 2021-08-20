@@ -1,2 +1,5 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<svelte:head>
+  <title>c04ch.ME</title>
+  <link rel="icon" href="/favicon.ico" />
+</svelte:head>
+<p class="p-10 text-center text-accent">Hallo!</p>
