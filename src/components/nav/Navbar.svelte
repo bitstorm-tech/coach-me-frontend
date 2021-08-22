@@ -3,9 +3,9 @@
   import NavbarItem from './NavbarItem.svelte';
   import CloseCross from '../ui/CloseCross.svelte';
   import HamburgerSymbol from '../ui/HamburgerSymbol.svelte';
-  import { slide } from 'svelte/transition';
-  import AuthButtons from './AuthButtons.svelte';
   import SignInModal from '../auth/SignInModal.svelte';
+  import DesktopMenu from './DesktopMenu.svelte';
+  import MobileMenu from './MobileMenu.svelte';
 
   export let navbarItems: NavbarItemType[] = [];
   let isMobileMenuVisible = false;
@@ -43,35 +43,9 @@
       {/if}
     </div>
   </div>
-  <!-- Desktop Menu -->
-  <div class="hidden sm:flex flex-row items-center w-min">
-    {#each navbarItems as navbarItem}
-      {#if navbarItem.visible}
-        <div class="mx-2 w-max">
-          <NavbarItem href={navbarItem.href}>
-            {navbarItem.text}
-          </NavbarItem>
-        </div>
-      {/if}
-    {/each}
-    <AuthButtons {signedIn} on:signinorsignup={showSignInModal} />
-  </div>
-  <!-- Mobile Menu -->
+  <DesktopMenu {signedIn} {navbarItems} on:signinorsignup={showSignInModal} />
   {#if isMobileMenuVisible}
-    <div class="flex flex-col items-center w-full mt-4 sm:hidden" transition:slide>
-      {#each navbarItems as navbarItem}
-        {#if navbarItem.visible}
-          <div class="mt-4" on:click={closeMobileMenu}>
-            <NavbarItem href={navbarItem.href}>
-              {navbarItem.text}
-            </NavbarItem>
-          </div>
-        {/if}
-      {/each}
-      <div class="mt-10">
-        <AuthButtons {signedIn} on:signinorsignup={showSignInModal} />
-      </div>
-    </div>
+    <MobileMenu {signedIn} {navbarItems} on:signinorsignup={showSignInModal} on:click={closeMobileMenu} />
   {/if}
 </nav>
 {#if isSignInModalVisible}
