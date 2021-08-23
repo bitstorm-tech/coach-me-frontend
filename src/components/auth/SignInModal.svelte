@@ -1,6 +1,6 @@
 <script lang="ts">
   import Modal from '../ui/Modal.svelte';
-  import PrimaryButton from '../ui/buttons/PrimaryButton.svelte';
+  import PrimaryButton from '../ui/PrimaryButton.svelte';
 </script>
 
 <Modal title="Sign in / Sign up" on:close>

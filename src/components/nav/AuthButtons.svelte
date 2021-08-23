@@ -1,5 +1,5 @@
 <script lang="ts">
-  import PrimaryButton from '../ui/buttons/PrimaryButton.svelte';
+  import PrimaryButton from '../ui/PrimaryButton.svelte';
   import { createEventDispatcher } from 'svelte';
   export let signedIn = false;
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { scale, blur } from 'svelte/transition';
   import CloseCross from './CloseCross.svelte';
-  import PrimaryButton from './buttons/PrimaryButton.svelte';
+  import PrimaryButton from './PrimaryButton.svelte';
   import { createEventDispatcher } from 'svelte';
 
   export let title: string;
