@@ -1,5 +1,5 @@
 {
-  "name": "coach-me-frontend",
+  "name": "elite-forge-frontend",
   "version": "0.1.0",
   "scripts": {
     "dev": "svelte-kit dev --open",

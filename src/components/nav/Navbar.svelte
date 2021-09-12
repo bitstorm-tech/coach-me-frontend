@@ -32,8 +32,8 @@
 <nav class="flex flex-col sm:flex-row bg-darkest justify-between sm:h-14 p-2 top-0">
   <div class="flex flex-row justify-between items-center">
     <div class="cursor-pointer flex flex-row space-x-2 font-lg" on:click={closeMobileMenu}>
-      <img src="/images/coach-me-logo.png" alt="Logo" height="28px" width="28px" />
-      <NavbarItem href="/">c04ch.ME</NavbarItem>
+      <img src="/images/elite-forge-logo.png" alt="Logo" height="28px" width="28px" />
+      <NavbarItem href="/">Elite Forge</NavbarItem>
     </div>
     <div class="sm:hidden" on:click={toggleMobileMenu}>
       {#if isMobileMenuVisible}
