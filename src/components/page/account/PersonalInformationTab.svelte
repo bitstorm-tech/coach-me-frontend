@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Checkbox from '../../ui/Checkbox.svelte';
   import Card from '../../ui/Card.svelte';
   import Input from '../../ui/Input.svelte';
 </script>
@@ -11,5 +12,6 @@
     </div>
     <Input label="Nickname" />
     <Input label="E-Mail" />
+    <Checkbox id="newsletter">Newsletter?</Checkbox>
   </Card>
 </div>
