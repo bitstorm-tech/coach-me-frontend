@@ -2,7 +2,7 @@
   export let header = null;
 </script>
 
-<div class="p-6 rounded-xl shadow-xl bg-darker">
+<div class="p-6 shadow-xl bg-darker">
   {#if header}
     <p class="text-xl font-semibold mb-2">{header}</p>
   {/if}

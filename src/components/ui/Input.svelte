@@ -12,6 +12,6 @@
     {type}
     {placeholder}
     on:change
-    class="p-2 w-full rounded shadow-inner outline-none bg-dark focus:shadow-inner-glow-s text-primary"
+    class="p-2 w-full shadow-inner outline-none bg-dark focus:shadow-inner-glow-s text-primary"
   />
 </div>

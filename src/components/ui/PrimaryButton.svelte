@@ -4,7 +4,7 @@
   export let href = null;
 
   const borderClasses = border
-    ? 'rounded-full border-primary border hover:shadow-inner-glow hover:border-accent'
+    ? 'border-primary border hover:shadow-inner-glow hover:border-accent'
     : 'hover:text-accent';
 </script>
 
@@ -12,7 +12,7 @@
   <button
     on:click
     {disabled}
-    class={`rounded w-max py-1 px-3 text-primary bg-opacity-100 focus:outline-none  hover-transition ${borderClasses}`}
+    class={`w-max py-1 px-3 text-primary bg-opacity-100 focus:outline-none  hover-transition ${borderClasses}`}
     class:cursor-default={disabled}
     class:cursor-pointer={!disabled}
   >
